@@ -170,7 +170,7 @@ namespace CASCLib
 
         public static void ExtractToFile(this Stream input, string path, string name)
         {
-            string fullPath = Path.Combine(path, name);
+            string fullPath = Path.Combine(path, Path.GetFileName(name));
             string dir = Path.GetDirectoryName(fullPath);
 
             DirectoryInfo dirInfo = new DirectoryInfo(dir);
