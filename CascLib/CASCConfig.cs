@@ -372,6 +372,8 @@ namespace CASCLib
 
         public string VersionName { get { return GetBuildInfoVariable("Version") ?? GetVersionsVariable("VersionsName"); } }
 
+        public string BuildId { get { return GetBuildInfoVariable("Version")?.Split('.')?.Last() ?? GetVersionsVariable("BuildId"); } }
+
         public string Product { get; private set; }
 
         public MD5Hash RootCKey => _Builds[ActiveBuild]["root"][0].FromHexString().ToMD5();
